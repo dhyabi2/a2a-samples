@@ -66,15 +66,15 @@ limits can change without republishing the whole card.
 
 The descriptor SHOULD include:
 
-| Field          | Required | Description                                      |
-| -------------- | -------- | ------------------------------------------------ |
-| `serviceId`    | Yes      | Stable identifier for the paid capability.       |
-| `termsId`      | Yes      | Stable identifier for this exact terms revision. |
-| `agentCardUrl` | Yes      | URL of the seller's Agent Card.                  |
-| `capability`   | Yes      | Capability id and compatible input/output modes. |
-| `pricing`      | Yes      | Pricing model, currency, and amount.             |
+| Field          | Required | Description                                                                             |
+| -------------- | -------- | --------------------------------------------------------------------------------------- |
+| `serviceId`    | Yes      | Stable identifier for the paid capability.                                              |
+| `termsId`      | Yes      | Stable identifier for this exact terms revision.                                        |
+| `agentCardUrl` | Yes      | URL of the seller's Agent Card.                                                         |
+| `capability`   | Yes      | Capability id and compatible input/output modes.                                        |
+| `pricing`      | Yes      | Pricing model, currency, and amount.                                                    |
 | `settlement`   | Yes      | Accepted settlement methods and proof format (e.g. x402, nano-xno, usdc-base, invoice). |
-| `receipts`     | Yes      | URL template for receipt/status lookup.          |
+| `receipts`     | Yes      | URL template for receipt/status lookup.                                                 |
 
 The `v1/samples/commerce-descriptor.json` fixture shows one ACP-style
 descriptor. Other descriptor schemas can be used if both buyer and seller agree
