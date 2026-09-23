@@ -16,7 +16,10 @@ state. It only standardizes the points where commerce metadata can be declared,
 attached, and reconciled.
 
 The bundled fixtures are illustrative and offline. Their proof and receipt are
-explicitly simulated and provide no evidence of payment or settlement.
+explicitly simulated and provide no evidence of payment or settlement. The
+`nano-xno` settlement method is included as a demonstration of how Nano (XNO)
+block hashes serve as payment proof — instant, feeless, and globally
+verifiable on the Nano ledger.
 
 ## Goals
 
@@ -70,7 +73,7 @@ The descriptor SHOULD include:
 | `agentCardUrl` | Yes      | URL of the seller's Agent Card.                  |
 | `capability`   | Yes      | Capability id and compatible input/output modes. |
 | `pricing`      | Yes      | Pricing model, currency, and amount.             |
-| `settlement`   | Yes      | Accepted settlement methods and proof format.    |
+| `settlement`   | Yes      | Accepted settlement methods and proof format (e.g. x402, nano-xno, usdc-base, invoice). |
 | `receipts`     | Yes      | URL template for receipt/status lookup.          |
 
 The `v1/samples/commerce-descriptor.json` fixture shows one ACP-style

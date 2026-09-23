@@ -95,3 +95,28 @@ test("commerce fixtures use A2A 1.0 and preserve exact commerce bindings", async
     );
     assert.equal(receipt.usage.inputCharacters, message.parts[0].text.length);
 });
+
+test("commerce descriptor offers nano-xno as a feeless settlement rail", async () => {
+    const descriptor = await fixture("commerce-descriptor.json");
+    const card = await fixture("agent-card.json");
+
+    const nano = descriptor.settlement.find(
+        (method) => method.method === "nano-xno"
+    );
+    assert.ok(nano, "nano-xno settlement method must be present");
+    assert.equal(nano.network, "nano");
+    assert.equal(nano.proofFormat, "nano-block-hash");
+
+    assert.ok(
+        descriptor.paymentProof.acceptedProofTypes.includes("nano-block-hash"),
+        "nano-block-hash must be an accepted proof type"
+    );
+
+    const extension = card.capabilities.extensions.find(
+        (candidate) => candidate.uri === extensionUri
+    );
+    assert.ok(
+        extension.params.supportedSettlement.includes("nano-xno"),
+        "Agent Card must advertise nano-xno settlement"
+    );
+});

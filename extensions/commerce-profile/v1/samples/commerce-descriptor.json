@@ -25,6 +25,11 @@
             "proofFormat": "x402-payment-header"
         },
         {
+            "method": "nano-xno",
+            "network": "nano",
+            "proofFormat": "nano-block-hash"
+        },
+        {
             "method": "usdc-base",
             "network": "base",
             "proofFormat": "transaction-reference"
@@ -38,6 +43,7 @@
         "metadataKey": "https://github.com/a2aproject/a2a-samples/extensions/commerce-profile/v1/paymentProof",
         "acceptedProofTypes": [
             "x402-payment-header",
+            "nano-block-hash",
             "transaction-reference",
             "buyer-account-reference"
         ]

@@ -19,7 +19,7 @@
                 "required": false,
                 "params": {
                     "descriptorUrl": "https://seller.example.com/.well-known/commerce-profile.json",
-                    "supportedSettlement": ["x402", "usdc-base", "invoice"],
+                    "supportedSettlement": ["x402", "nano-xno", "usdc-base", "invoice"],
                     "receiptUrlTemplate": "https://seller.example.com/receipts/{receiptId}"
                 }
             }
